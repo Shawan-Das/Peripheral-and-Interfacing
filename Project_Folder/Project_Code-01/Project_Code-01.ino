@@ -1,6 +1,6 @@
-void ActivOneByOne();     //Line -
-void TimeCount(int port); //Line -
-void Blink_LED();         //Line -
+void ActivOneByOne();     //Line - 42
+void TimeCount(int port); //Line - 50
+void Blink_LED();         //Line - 60
 void low(int port){
   digitalWrite(port,LOW);
 }
