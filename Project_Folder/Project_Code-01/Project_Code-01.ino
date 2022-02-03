@@ -1,6 +1,12 @@
 void ActivOneByOne();     //Line -
 void TimeCount(int port); //Line -
 void Blink_LED();         //Line -
+void low(int port){
+  digitalWrite(port,LOW);
+}
+void high(int port){
+  digitalWrite(port,HIGH);
+}
 
 void setup() {
   // put your setup code here, to run once:
@@ -24,7 +30,7 @@ void loop() {
   Serial.println("Your Time Starts NOW"); Serial.println();
   for (int port=11; port>=2; port--){
     TimeCount(port);
-    digitalWrite(port,LOW);
+    low(port);
 
     if(port==10 || port==7 || port==3 || port==2){
       Serial.print("Only "); Serial.print(port-2); Serial.println("min left");
@@ -41,7 +47,7 @@ void loop() {
 //----Active All---
 void ActivOneByOne(){
     for(int i=2; i<=11; i++){
-      digitalWrite(i,HIGH);
+      high(i);
       delay(200);
     }
 }
@@ -49,13 +55,13 @@ void ActivOneByOne(){
 //----Time Count---
 void TimeCount(int port){
   for(int i=1; i<=15; i++){
-    digitalWrite(port,LOW);
+    low(port);
     delay(800);
-    digitalWrite(port,HIGH);
+    high(port);
     delay(800);
-    digitalWrite(port,LOW);
+    low(port);
     delay(800);
-    digitalWrite(port,HIGH);
+    high(port);
     delay(800);
   }
 }
@@ -63,30 +69,14 @@ void TimeCount(int port){
 //---Blink LED---
 void Blink_LED(){
       delay(300);
-  for(int i=0; i<5; i++){
+  for(int i=0; i<15; i++){
     
-    digitalWrite(10,HIGH);
-    digitalWrite(8,HIGH);
-    digitalWrite(6,HIGH);
-    digitalWrite(4,HIGH);
-    digitalWrite(2,HIGH);
+    for(int j=2; j<=10; j+=2) high(j);
     delay(500);
-    digitalWrite(10,LOW);
-    digitalWrite(8,LOW);
-    digitalWrite(6,LOW);
-    digitalWrite(4,LOW);
-    digitalWrite(2,LOW);
-    
-    digitalWrite(11,HIGH);
-    digitalWrite(9,HIGH);
-    digitalWrite(7,HIGH);
-    digitalWrite(5,HIGH);
-    digitalWrite(3,HIGH);
+    for(int j=2; j<=10; j+=2) low(j);
+
+    for(int j=3; j<=11; j+=2) high(j);
     delay(500);
-    digitalWrite(11,LOW);
-    digitalWrite(9,LOW);
-    digitalWrite(7,LOW);
-    digitalWrite(5,LOW);
-    digitalWrite(3,LOW);
+    for(int j=3; j<=11; j+=2) low(j);
   }
 }
