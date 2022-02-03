@@ -11,16 +11,11 @@ void high(int port){
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  pinMode(11,OUTPUT);
-  pinMode(10,OUTPUT);
-  pinMode(9,OUTPUT);
-  pinMode(8,OUTPUT);
-  pinMode(7,OUTPUT);
-  pinMode(6,OUTPUT);
-  pinMode(5,OUTPUT);
-  pinMode(4,OUTPUT);
-  pinMode(3,OUTPUT);
-  pinMode(2,OUTPUT);
+  pinMode(11,OUTPUT); pinMode(10,OUTPUT);
+  pinMode(9,OUTPUT);  pinMode(8,OUTPUT);
+  pinMode(7,OUTPUT);  pinMode(6,OUTPUT);
+  pinMode(5,OUTPUT);  pinMode(4,OUTPUT);
+  pinMode(3,OUTPUT);  pinMode(2,OUTPUT);
 }
 
 void loop() {
@@ -55,14 +50,10 @@ void ActivOneByOne(){
 //----Time Count---
 void TimeCount(int port){
   for(int i=1; i<=15; i++){
-    low(port);
-    delay(800);
-    high(port);
-    delay(800);
-    low(port);
-    delay(800);
-    high(port);
-    delay(800);
+    low(port);  delay(800);
+    high(port); delay(800);
+    low(port);  delay(800);
+    high(port); delay(800);
   }
 }
 
