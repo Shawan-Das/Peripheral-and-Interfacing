@@ -13,6 +13,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 servo1.write(0); servo2.write(0); servo3.write(0);
    int x=random(9,12);
+   x =9;
 
    if(x==9){
       for(int i=0; i<=360; i++){
