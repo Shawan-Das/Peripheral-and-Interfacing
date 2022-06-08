@@ -1,9 +1,12 @@
+// Sonic Shooter, a shooting game with soner
+// Tested on April, 2022
+
 #include<Wire.h>
 #include<LiquidCrystal_I2C.h>
 #include<Servo.h>
 
-#define echoPin 2 // attach pin D2 Arduino to pin Echo of HC-SR04
-#define trigPin 3 //attach pin D3 Arduino to pin Trig of HC-SR04
+#define echoPin 2 
+#define trigPin 3 
 Servo myServo1, myServo2;
 
 long duration; // variable for the duration of sound wave travel
