@@ -2,10 +2,11 @@
 
 // ---------------------------------------------------------------- //
 // Arduino Ultrasoninc Sensor HC-SR04
-// Re-writed by Arbi Abdul Jabbaar
-// Using Arduino IDE 1.8.7
+// Re-writed by Shawan Daa
+// Using Arduino MEGA
 // Using HC-SR04 Module
-// Tested on 17 September 2019
+// Tested on  April 2022
+// I2C-LCD(16x2) display
 // ---------------------------------------------------------------- //
 #include<Wire.h>
 #include<LiquidCrystal_I2C.h>
